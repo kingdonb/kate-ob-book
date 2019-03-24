@@ -23,11 +23,11 @@ Requirements:
 You can generate either of books using `BOOK_SLUG` variable.
 
 Available values for *`BOOK_SLUG`*:
-  - `kate_ob` Kate's OceanBites Posts
+  - `ob` Kate's OceanBites Posts
   - `postdoc` Another publication also someday maybe?
 
 ```
-$ docker run --rm --volume "$(pwd):/output" -e BOOK_SLUG='kate_ob' kingdonb/kate-ob-book:latest
+$ docker run --rm --volume "$(pwd):/output" -e BOOK_SLUG='ob' kingdonb/kate-ob-book:latest
 ```
 
 -   You should see the final EPUB/MOBI/PDF files in the current directory after the above runs.

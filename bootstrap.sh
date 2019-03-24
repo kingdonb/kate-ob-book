@@ -10,17 +10,18 @@ source books.sh
 export ${BOOKS[${BOOK_SLUG^^}]}
 
 # Common vars.
-IMGS_DOMAIN="lh3.googleusercontent.com"
+IMGS_DOMAIN1="i0.wp.com"
+IMGS_DOMAIN2="oceanbites.org"
 
 #
 # Make sure that links are relative \
 # # Remove the /sre/ directories
 # Save stuff in html/ directory
-# Do not create a landing.google.com directory
+# Do not create a philosophyaquatica.info directory
 # Enable recursion, timestamping (--mirror)
 # Images are hosted elsewhere, download them as well.
 # We need to go up a level from /toc/ where we start
-# The "ture" at the end to ignore non-200 URLs like 404.
+# The "true" at the end to ignore non-200 URLs like 404.
 wget \
     --convert-links         \
     --directory-prefix=html \
@@ -32,7 +33,7 @@ wget \
     --mirror                \
     --no-verbose            \
     --recursive             \
-    --domains=${IMGS_DOMAIN},landing.google.com ${BOOK_TOC_URL} || true
+    --domains=${IMGS_DOMAIN1},${IMGS_DOMAIN2},philosophyaquatica.info ${BOOK_TOC_URL} || true
 
 #
 echo "Get working mode..."
@@ -64,7 +65,7 @@ done
 # Generate epub from html.
 echo "Generate book ..."
 bundle exec ruby generate.rb
-pushd html/landing.google.com/sre/${BOOK_NAME}/toc
+pushd html/philosophyaquatica.info/book/${BOOK_NAME}/toc
 pandoc --from=html --to=epub                                 \
     --output=../../../../../${BOOK_FILE}.epub                \
     --epub-metadata=../../../../../metadata/${BOOK_NAME}.xml \
