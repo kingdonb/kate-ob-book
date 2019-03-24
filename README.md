@@ -38,7 +38,7 @@ $ docker run --rm --volume "$(pwd):/output" -e BOOK_SLUG='ob' kingdonb/kate-ob-b
 ```
 $ mkdir /tmp/sreoutput
 $ chcon -Rt svirt_sandbox_file_t /tmp/sreoutput
-$ docker run --rm --volume "/tmp/sreoutput:/output" -e BOOK_SLUG='kate_ob' kingdonb/kate-ob-book:latest
+$ docker run --rm --volume "/tmp/sreoutput:/output" -e BOOK_SLUG='ob' kingdonb/kate-ob-book:latest
 ```
 
 The build for the above Docker image can be audited at <https://cloud.docker.com/swarm/kingdonb/repository/docker/kingdonb/kate-ob-book/builds>.
