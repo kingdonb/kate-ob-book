@@ -20,9 +20,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
+COPY Gemfile /src/Gemfile
+COPY Gemfile.lock /src/Gemfile.lock
+RUN bundle install
 COPY . /src/
 
-RUN bundle install
+RUN bundle
 
 ENTRYPOINT ["/src/bootstrap.sh", "docker"]
 
