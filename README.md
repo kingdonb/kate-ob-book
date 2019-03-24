@@ -1,14 +1,14 @@
-# Google SRE Book/s
+# Book of Kate's OceanBites Posts
 
-Generates a EPUB/MOBI/PDF for the Google SRE Book/s.
+Generates a EPUB/MOBI/PDF for the OceanBites posts by Katherine Barrett.
 
-Original sources are downloaded from https://landing.google.com/sre/books
+Original sources are downloaded from https://oceanbites.org/author/kbarrett/
 
-Visit the [Releases](https://github.com/captn3m0/google-sre-ebook/releases) page to download the latest release.
+Visit the [Releases](https://github.com/kingdonb/kate-ob-book/releases) page to download the latest release.
 
 # Books
 
-| Site Reliability Engineering (2016)                                                   | The Site Reliability Workbook (2018)                                                   |
+| OceanBites Posts Cover Image Here (2016)                                              | Post-mortem Documentation Blog ?? (20XX)                                               |
 |:--------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------|
 | <img src="cover/sre-book.jpg" width="320" alt="site reliability engineering cover" /> | <img src="cover/workbook.jpg" width="320" alt="the site reliability workbook cover" /> |
 
@@ -23,11 +23,11 @@ Requirements:
 You can generate either of books using `BOOK_SLUG` variable.
 
 Available values for *`BOOK_SLUG`*:
-  - `sre_book` Site Reliability Engineering.
-  - `srw_book` The Site Reliability Workbook.
+  - `kate_ob` Kate's OceanBites Posts
+  - `postdoc` Another publication also someday maybe?
 
 ```
-$ docker run --rm --volume "$(pwd):/output" -e BOOK_SLUG='srw_book' captn3m0/google-sre-ebook:latest
+$ docker run --rm --volume "$(pwd):/output" -e BOOK_SLUG='kate_ob' kingdonb/kate-ob-book:latest
 ```
 
 -   You should see the final EPUB/MOBI/PDF files in the current directory after the above runs.
@@ -38,10 +38,10 @@ $ docker run --rm --volume "$(pwd):/output" -e BOOK_SLUG='srw_book' captn3m0/goo
 ```
 $ mkdir /tmp/sreoutput
 $ chcon -Rt svirt_sandbox_file_t /tmp/sreoutput
-$ docker run --rm --volume "/tmp/sreoutput:/output" -e BOOK_SLUG='srw_book' captn3m0/google-sre-ebook:latest
+$ docker run --rm --volume "/tmp/sreoutput:/output" -e BOOK_SLUG='kate_ob' kingdonb/kate-ob-book:latest
 ```
 
-The build for the above Docker image can be audited at <https://cloud.docker.com/swarm/captn3m0/repository/docker/captn3m0/google-sre-ebook/builds>.
+The build for the above Docker image can be audited at <https://cloud.docker.com/swarm/kingdonb/repository/docker/kingdonb/kate-ob-book/builds>.
 
 ## macOS
 

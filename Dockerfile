@@ -1,7 +1,7 @@
 # LTS Image
 FROM ubuntu:18.04
 
-LABEL maintainer="github.google-sre-ebook@captnemo.in"
+LABEL maintainer="kingdon@nerdland.info"
 
 ARG DEBIAN_FRONTEND="noninteractive"
 
